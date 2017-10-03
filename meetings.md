@@ -17,6 +17,6 @@
 		- https://blog.mide.com/vibration-analysis-fft-psd-and-spectrogram
 - Decided to start with detecting letters of the alphabet, then numbers, then words.
 	- Image of the Waveform Alphabet
-		- ![Waveform Alphabet](https://steemit.com/nature/@rossenpavlov/the-waveform-alphabet)
+		- ![Waveform Alphabet](https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dsScJ6DVrqwSMx7vdRxvtiydj6DLw_1680x8400 = 900x4500)
 
 ## WK of Oct. 8
