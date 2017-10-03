@@ -15,5 +15,8 @@
 		- https://www.imv.co.jp/e/pr/vibration_measuring/chapter03/
 	- Detailed Vibration Analysis
 		- https://blog.mide.com/vibration-analysis-fft-psd-and-spectrogram
+- Decided to start with detecting letters of the alphabet, then numbers, then words.
+	- Image of the Waveform Alphabet
+		- ![Waveform Alphabet](https://steemit.com/nature/@rossenpavlov/the-waveform-alphabet)
 
 ## WK of Oct. 8
