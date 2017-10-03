@@ -2,7 +2,7 @@
 
 ## Background
 
-### Project name
+### Project Name
 - helios
 
 ### Senior Design Project Idea
