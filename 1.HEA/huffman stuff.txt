@@ -1,0 +1,40 @@
+entropy encoding:
+
+1951
+1948, shannon: entropy
+sort symbols in asending order, merge first 2 as new symbol, push it back
+
+ a  b   c   d
+.1 .2 .25 .45
+
+
+ c  a+b  d
+.25 .3 .45
+
+(a+b) + c   d
+   .55     .45
+
+			root .1
+		       	0/      \1
+			d    (a+b)+c 
+			     0/	    \1
+			   a+b       c
+			   0/  \1
+			  a    b
+
+
+law of large numbers
+
+proce math correctness of huffman coding
+general case- use induction, by contradiction
+
+prove that for two symbols a and d with prob p(d)>=p(a)
+then the resultant sqeu, the length of symbol d is no longer than of symbol a
+len d <= len a
+
+all symbols are leafs
+
+since p(d) is greater than p(a), then d will most likely be inserted after the insertion of a.
+then d will have a shorter length or equal length to a. the lowest values will be inserted first,
+which will result at the bottom of the tree. while values that are inserted later, are on the top of
+the 
