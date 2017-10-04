@@ -1,2 +1,4 @@
 This is Miguel here, first commit
 This is Miguel 2nd commit
+
+This is Miguel 3rd commit, updated email address
