@@ -18,6 +18,11 @@
 - Decided to start with detecting letters of the alphabet, then numbers, then words.
 	- Image of the Waveform Alphabet
 		- ![Waveform Alphabet](wfAlpha.jpg)
-		- Source: https://www.bespokenart.com/products/waveform-alphabet?variant=27061748353
+			- Source: https://www.bespokenart.com/products/waveform-alphabet?variant=27061748353
 
 ## WK of Oct. 8
+
+- Performed more research:
+	- Spectogram
+		-http://home.cc.umanitoba.ca/~robh/howto.html#formants
+		-http://www.fon.hum.uva.nl/praat/
