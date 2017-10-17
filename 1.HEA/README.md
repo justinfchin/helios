@@ -18,7 +18,7 @@ ABC produces the following tree:
 			 (p + p + p)
 			   /	  \
 			A         (p + p)
-			        	/        \
+			         /        \
 			         B         C
 
 But we can also obtain this:
@@ -27,7 +27,7 @@ But we can also obtain this:
 			   /	  \
 			B        (p + p)
 			     	/        \
-			      A        C
+			       A          C
 
 In other words, the sequence length for symbols with the same probability might be larger than others.
 
