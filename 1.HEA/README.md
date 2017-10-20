@@ -53,3 +53,25 @@ According to the Huffman Encoding algorithm, n symbols produce (n - 1) nodes whe
 		
 		Case 3:
 		
+- If p(A) > p(B), we will induct on the number of symbols for the Huffman Encoding tree. We take into consideration that the Huffman Algorithm is a greedy algorithm and it guarantees an optimal tree. 
+
+	Base Case: When n = 2, that means the Huffman tree has two leaves and the root. Both leaves have depth 1 and therefore, symbols
+		   A and B have the same sequence length. Trivial case. 
+		   
+	Induction Hypothesis: Assume it works for a tree R1 with the set S1 which has symbols {s1,s2,s3,......,x,y} U {z} - {x,y}. 
+			      Symbol z has probability p(z) = p(x) + p(y).Set S1 has n symbols, where each symbol has its own   		 		      probability. R is optimal and symbol A has a shorter or equal lenght sequence as symbol B. Symbols 
+			      A and B can be any pair in S1 that satisfy the probability condition p(A) > p(B). 
+	
+	Induction Step: A new tree called R2 is created from R1, which has the symbol set S2 as (S1 U {x,y} - {z}). S2 has (n + 1)
+			symbols. We will apply the Induction Hypothesis in the following scenarios.  
+			
+			Scenario 1: x and y are siblings, and x and y are symbols A and B respectively. Since siblings have the same
+				sequence length we are done. The rest of the tree still holds by the Induction Hypothesis.
+				
+			Scenario 2: Symbol A has a lower depth than symbol B. This means A already has a shorter sequence. We are done.
+				By the induction hypothesis, A and B can be any pair of symbols and therefore, they are in an optimal
+				Huffman Tree. 
+				
+			Scenario 3: Symbol A has a higher depth than symbol B.
+				
+			
