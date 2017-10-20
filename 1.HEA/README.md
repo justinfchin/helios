@@ -31,27 +31,6 @@ But we can also obtain this:
 
 In other words, the sequence length for symbols with the same probability might be larger than others.
 
-
-- If p(A) > p(B), We prove by contradiction. Assume the resultant sequence for A is longer than the sequence of B. 
-
-According to the Huffman Encoding algorithm, n symbols produce (n - 1) nodes when merging.  
-
- * Procedure to prove:
- 
- Start by Induction on the number of symbols:
- 
- Base Case: when n is 2, trivial
- 
- Induction Hypothesis: Assume it works for a tree R which is optimal for (n-1) symbols
- 
- Induction Step: Adding symbols x and y to the tree R and removing z, we get tree T (reconstruct tree with new symbols)
- 		(btw z = x + y). Now a and b can take any form, any pair of symbols in T
-		
-		Case 1: 
-		
-		Case 2:
-		
-		Case 3:
 		
 - If p(A) > p(B), we will induct on the number of symbols for the Huffman Encoding tree. We take into consideration that the Huffman Algorithm is a greedy algorithm and it guarantees an optimal tree. 
 
@@ -72,6 +51,41 @@ According to the Huffman Encoding algorithm, n symbols produce (n - 1) nodes whe
 				By the induction hypothesis, A and B can be any pair of symbols and therefore, they are in an optimal
 				Huffman Tree. 
 				
-			Scenario 3: Symbol A has a higher depth than symbol B.
+			Scenario 3: Symbol A has a higher depth than symbol B. We contradict this scenario to prove that Huffman Encoding
+				greedy procedure was not used with the symbols. 
+				
+				Assume tree R2 is optimal in this scenario. That means it is optimal while A has a longer sequence than B
+				and p(A) > p(B). 
+				
+				We define a cost function for the Huffman tree:
+				
+				COST(tree) = Sum(p(i)d(i)) , where p(i) is probability of i and d(i) is the depth of i. 
+				
+				If we find the cost of R2 we have:
+				
+				COST(R2) = p(s1)d(s1) + ... + p(B)d(B) + ... + p(A)d(A) + ... + p(sn)d(sn)
+				
+				With the assumption, we belive COST(R2) is the most minimum cost possible. To contradict that, we switch
+				A and B in R2 to create the tree R3. We calculate the cost for R3.
+				
+				COST(R3) = p(s1)d(s1) + ... + p(A)d(A) + ... + p(B)d(B) + ... + p(sn)d(sn)
+				
+				The cost of R2 should be less than R3 since it is optimal.
+				
+				COST(R2) < COST(R3)
+				p(B)d(B) +  p(A)d(A) <  p(A)d(A) + p(B)d(B)
+				
+				Looking at the inequalities, d(A) for R2 is heavier than d(A) for R3. This means the cost for R3 is less
+				than the cost for R2. Which is a contradiction to the optimality of R2. 
+				
+				This scenario is impossible because of the greedy algorithm Huffman Enconding. Therefore, only the above
+				two scenarios are possible for optimal trees. 
+				
+	Therefore, we have proved that the Huffman Enconding algorithm works for any n > 2 symbols while still being optimal and keeping
+	higher probability symbols with sequences shorter or equal to symbols with lower probablities. 
+				
+				
+				
+				
 				
 			
