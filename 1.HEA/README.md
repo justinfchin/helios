@@ -36,3 +36,20 @@ In other words, the sequence length for symbols with the same probability might 
 
 According to the Huffman Encoding algorithm, n symbols produce (n - 1) nodes when merging.  
 
+ * Procedure to prove:
+ 
+ Start by Induction on the number of symbols:
+ 
+ Base Case: when n is 2, trivial
+ 
+ Induction Hypothesis: Assume it works for a tree R which is optimal for (n-1) symbols
+ 
+ Induction Step: Adding symbols x and y to the tree R and removing z, we get tree T (reconstruct tree with new symbols)
+ 		(btw z = x + y). Now a and b can take any form, any pair of symbols in T
+		
+		Case 1: 
+		
+		Case 2:
+		
+		Case 3:
+		
