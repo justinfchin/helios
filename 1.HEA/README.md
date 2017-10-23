@@ -78,7 +78,8 @@ In other words, the sequence length for symbols with the same probability might 
 			Looking at the inequalities, d(A) for R2 is heavier than d(A) for R3. This means the cost for R3 is less
 			than the cost for R2. Which is a contradiction to the optimality of R2. 
 				
-			This scenario is impossible because of the greedy algorithm Huffman Enconding. Therefore, only the above				two scenarios are possible for optimal trees. 
+			This scenario is impossible because of the greedy algorithm Huffman Enconding. 
+			Therefore, only the above two scenarios are possible for optimal trees. 
 				
 	Therefore, we have proved that the Huffman Enconding algorithm works for any n > 2 symbols while still being optimal and keeping
 	higher probability symbols with sequences shorter or equal to symbols with lower probablities. 
