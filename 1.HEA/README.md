@@ -44,14 +44,14 @@ In other words, the sequence length for symbols with the same probability might 
 	Induction Step: A new tree called R2 is created from R1, which has the symbol set S2 as (S1 U {x,y} - {z}). S2 has (n + 1)
 			symbols. We will apply the Induction Hypothesis in the following scenarios.  
 			
-			Scenario 1: x and y are siblings, and x and y are symbols A and B respectively. Since siblings have the same
-				sequence length we are done. The rest of the tree still holds by the Induction Hypothesis.
+		Scenario 1: x and y are siblings, and x and y are symbols A and B respectively. Since siblings have the same
+			sequence length we are done. The rest of the tree still holds by the Induction Hypothesis.
 				
-			Scenario 2: Symbol A has a lower depth than symbol B. This means A already has a shorter sequence. We are done.
-				By the induction hypothesis, A and B can be any pair of symbols and therefore, they are in an optimal
+		Scenario 2: Symbol A has a lower depth than symbol B. This means A already has a shorter sequence. We are done.
+			By the induction hypothesis, A and B can be any pair of symbols and therefore, they are in an optimal
 				Huffman Tree. 
 				
-			Scenario 3: Symbol A has a higher depth than symbol B. We contradict this scenario to prove that Huffman Encoding
+		Scenario 3: Symbol A has a higher depth than symbol B. We contradict this scenario to prove that Huffman Encoding
 				greedy procedure was not used with the symbols. 
 				
 				Assume tree R2 is optimal in this scenario. That means it is optimal while A has a longer sequence than B
