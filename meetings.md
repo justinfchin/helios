@@ -4,7 +4,8 @@
 3. [November](#nov)
 4. [December](#dec)
 
-## WK of Sep. 24 <a name="sep"></a>
+<a name="sep"></a>
+## WK of Sep. 24 
 
 - Met with PHD student Timmy, and Master student Isatou.
 - Timmy introduced to us the single point laser, scanning laser, the matLab program 'Display' that he wrote in order to get data from using the single point laser. He also gave us some example data & things to look up, like:
