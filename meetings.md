@@ -12,7 +12,8 @@
 	- FFT, NLP
 	- Material for Vibration
 
-## WK of Oct. 1 <a name="oct"></a>
+<a name="oct"></a>
+## WK of Oct. 1
 
 - In class presentation gave us the idea that if we want to scale our project, to include detecting/determining objects within our space.
 - Researched FFT & Vibration Analysis
@@ -48,7 +49,8 @@
 
 - Working on Spec Report
 
-## WK of Nov. 5 <a name="nov"></a>
+<a name="nov"></a>
+## WK of Nov. 5 
 
 -
 
@@ -64,7 +66,8 @@
 
 - 
 
-## WK of Dec. 3 <a name="dec"></a>
+<a name="dec"></a>
+## WK of Dec. 3 
 
 -
 
