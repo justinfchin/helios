@@ -26,3 +26,57 @@
 	- Spectogram
 		-http://home.cc.umanitoba.ca/~robh/howto.html#formants
 		-http://www.fon.hum.uva.nl/praat/
+
+## WK of Oct. 15
+
+- Working on 1.hea & 2.double blind
+- Met with BME student using the LDV
+
+## WK of Oct. 22
+
+- Met with Timmy
+- Performed some test data
+  - Played a sound coming from a phone that was encased in a metallic container.
+  - Performed FFT on the data to see our results.
+
+## WK of Oct. 29
+
+- Working on Spec Report
+
+## WK of Nov. 5
+
+-
+
+## WK of Nov. 12
+
+-
+
+## WK of Nov. 19
+
+-
+
+## WK of Nov. 26
+
+- 
+
+## WK of Dec. 3
+
+-
+
+## WK of Dec. 10
+
+-
+
+## WK of Dec. 17
+
+-
+
+## WK of Dec. 24
+
+-
+
+## WK of Dec. 31
+
+-
+
+
