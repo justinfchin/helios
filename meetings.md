@@ -1,13 +1,17 @@
 # MEETINGS
+1. [September](#sep)
+2. [October](#oct)
+3. [November](#nov)
+4. [December](#dec)
 
-## WK of Sep. 1
+## WK of Sep. 24 <a name="sep"></a>
 
 - Met with PHD student Timmy, and Master student Isatou.
 - Timmy introduced to us the single point laser, scanning laser, the matLab program 'Display' that he wrote in order to get data from using the single point laser. He also gave us some example data & things to look up, like:
 	- FFT, NLP
 	- Material for Vibration
 
-## WK of Oct. 1
+## WK of Oct. 1 <a name="oct"></a>
 
 - In class presentation gave us the idea that if we want to scale our project, to include detecting/determining objects within our space.
 - Researched FFT & Vibration Analysis
@@ -43,7 +47,7 @@
 
 - Working on Spec Report
 
-## WK of Nov. 5
+## WK of Nov. 5 <a name="nov"></a>
 
 -
 
@@ -59,7 +63,7 @@
 
 - 
 
-## WK of Dec. 3
+## WK of Dec. 3 <a name="dec"></a>
 
 -
 
