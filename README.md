@@ -15,6 +15,9 @@
 	- Detect/determine objects in the room
 	- Adapt to other languages
 
+## Specification Report
+- [GoogleDocs Link](https://docs.google.com/document/d/1MODgFBAmrPI_2PXS4SshltVS8bHBz-O9JDveyJbtV4E/edit?usp=sharing)
+
 ## Meetings
 
 - [View: Meetings](meetings.md)
