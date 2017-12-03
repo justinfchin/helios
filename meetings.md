@@ -52,39 +52,30 @@
 <a name="nov"></a>
 ## WK of Nov. 5 
 
--
+- Read lots of research papers regarding the LDV and remote voice detection.
 
 ## WK of Nov. 12
 
--
+- Continue to read more research papers on the LDV. 
 
 ## WK of Nov. 19
 
--
+- More research on how to expand project. 
+    - Came to conclusion to use TIMIT data for voice recognition. 
 
 ## WK of Nov. 26
 
-- 
+- Went to perform more experiments with the LDV.
+    - Increased range.
+    - Utilized voices.
 
 <a name="dec"></a>
 ## WK of Dec. 3 
 
--
+- Working on Design Report
 
 ## WK of Dec. 10
 
--
-
-## WK of Dec. 17
-
--
-
-## WK of Dec. 24
-
--
-
-## WK of Dec. 31
-
--
+- Classes have ended...will resume meetings next semester.
 
 
