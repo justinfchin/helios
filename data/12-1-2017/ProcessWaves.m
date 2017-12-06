@@ -2,7 +2,7 @@ function ProcessWaves(file)
 close all
 Fs = 44100;
 load(file) %remove this line when copying the entire script to test for sound
-data = trim_cardboard_vol15;% the data name
+%%data = trim_cardboard_vol15;% the data name
 
 a = abs(fft(data));
 figure(1)
@@ -13,7 +13,7 @@ title('FFT of Raw Data')
 xlabel('Normalised frequency')
 ylabel('Magnitude')
 %create Butter filter co
-[B, A] = butter(20, 0.3, 'high');
+[B, A] = butter(20, 0.3, 'low');
 %apply Butter filter
 filtered = filter(B,A,data);
 
@@ -31,7 +31,7 @@ ylabel('Magnitude')
 %sound(data,Fs);
 %sound(filtered,Fs);
 figure(3)
-plot(trim_cardboard_vol15)
+plot(data)
 xlabel('Time')
 ylabel('Amplitude')
 title('Raw data from LDV')
@@ -40,6 +40,11 @@ plot(filtered)
 xlabel('Time')
 ylabel('Amplitude')
 title('Filtered Data with Butter')
+%testing the sound difference
+%1st sound is original
+%2nd sound is filtered
+%sound(data,Fs);
+%sound(filtered,Fs);
 
 
 
