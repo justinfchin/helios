@@ -13,7 +13,7 @@ title('FFT of Raw Data')
 xlabel('Normalised frequency')
 ylabel('Magnitude')
 %create Butter filter co
-[B, A] = butter(20, 0.3, 'low');
+[B, A] = butter(20, 0.11, 'low');
 %apply Butter filter
 filtered = filter(B,A,data);
 
