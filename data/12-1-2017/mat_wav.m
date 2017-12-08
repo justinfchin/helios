@@ -11,5 +11,20 @@ load(file)
 %audiowrite(filename,filtered*50,Fs)
 
 %raw data from ldv
-filename = 'male5cb.wav';
-audiowrite(filename,data*50,Fs);                                              
+%filename = 'male5cb.wav';
+%audiowrite(filename,data*50,Fs);
+
+for n = 1:441000
+    if (abs(data(n))< .003)
+        data(n) = data(n)/2;
+    end
+end
+
+%%%%
+%create Butter filter co
+[B, A] = butter(20, 0.11, 'low');
+%apply Butter filter
+filtered = filter(B,A,data);
+
+filename = 'our_female1cb.wav';
+audiowrite(filename,filtered*100,Fs);

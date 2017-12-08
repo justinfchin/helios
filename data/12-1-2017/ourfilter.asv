@@ -1,0 +1,9 @@
+function ourfilter(file)
+
+Fs = 44100;
+load(file)
+for n = 1:441000
+    if (abs(data(n))< .002)
+        
+    end
+end
