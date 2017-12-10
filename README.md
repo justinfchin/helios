@@ -18,6 +18,10 @@
 ## Specification Report
 - [GoogleDocs Link](https://docs.google.com/document/d/1MODgFBAmrPI_2PXS4SshltVS8bHBz-O9JDveyJbtV4E/edit?usp=sharing)
 
+## Design Report
+- [Presentation](https://docs.google.com/presentation/d/1tisFgrkVGKQc0OuIMv-1m_N49rM4-hB4r10_Se2CzB4/edit?usp=sharing)
+- [Document](https://docs.google.com/document/d/1aCLo4EOBs--eeBiwbeih1LgdyiZGMhM40jSkdIjuo-Q/edit?usp=sharing)
+
 ## Meetings
 
 - [View: Meetings](meetings.md)
