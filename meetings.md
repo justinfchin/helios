@@ -3,7 +3,14 @@
 2. [October](#oct)
 3. [November](#nov)
 4. [December](#dec)
-
+5. [January](#jan)
+6. [February](#feb)
+7. [March](#mar)
+8. [April](#apr)
+9. [May](#may)
+---
+# First Semester
+---
 <a name="sep"></a>
 ## WK of Sep. 24 
 
@@ -77,5 +84,31 @@
 ## WK of Dec. 10
 
 - Classes have ended...will resume meetings next semester.
+---
+# Second Semester
+---
+<a name="jan"></a>
+## WK of Jan.
 
+- Lorem 
+
+<a name="feb"></a>
+## WK of February.
+
+- Lorem 
+
+<a name="mar"></a>
+## WK of March.
+
+- Lorem 
+
+<a name="apr"></a>
+## WK of April.
+
+- Lorem 
+
+<a name="may"></a>
+## WK of May.
+
+- Lorem 
 
