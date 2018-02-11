@@ -1,8 +1,8 @@
-# Capstone I - CCNY Fall 2017 - Wei
-> Remote Sensing with Laser Doppler Vibrometer
-
-## Background
-- **Project Name:** helios
+# Helios - Remote Sensing with LDV
+> Remote Sensing & Speaker Recognition with Laser Doppler Vibrometer (LDV)
+- For:
+    - CCNY Capstone I & II 
+        - Fall 2017 - Wei
 
 ### Senior Design Project Idea
 
@@ -13,6 +13,9 @@
 	- Vary surface material (perhaps add reflective tape)
 	- Detect/determine objects in the room
 	- Adapt to other languages
+    - Once able to detect speakers, change to detect actions that are happening in that room
+        - eg. a door closed
+        - eg. a gunshot just went off 
 
 ## Reports
 - **Specification Report**
