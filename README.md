@@ -24,7 +24,14 @@
     - [Presentation](https://docs.google.com/presentation/d/1tisFgrkVGKQc0OuIMv-1m_N49rM4-hB4r10_Se2CzB4/edit?usp=sharing)
     - [Document](https://docs.google.com/document/d/1aCLo4EOBs--eeBiwbeih1LgdyiZGMhM40jSkdIjuo-Q/edit?usp=sharing)
 - **Updates on Design**
-    - [Design Updates]()
+    - [Design Updates](https://docs.google.com/presentation/d/1BMWx23MD0vmf4RUvOBaTfwrOpAZb5I4w9msuXU_t_M4/edit?usp=sharing)
+
+## Notes:
+- how to get matlab working with python
+    1. open matlab
+    2. `matlabroot`
+    3. cd `matlabroot`/extern/engines/python
+    4. `python setup.py install`
 
 ## Meetings
 - [View: Meetings](meetings.md)
