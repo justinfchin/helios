@@ -4,7 +4,7 @@
 ## Experiment Details
 
 | Sample #  | Filename  | Distance (feet)   |  Material     | Speaker   |
-|:--------: |:--------: |:---------------:  |:---------:    |:-------:  |
+|-------- |:--------: |:---------------:  |:---------:    |:-------:  |
 |     1     |    0MF    |        10         |   Metal       |  Female   |
 |     2     |    0MM    |        10         |   Metal       |   Male    |
 |     3     |    0CF    |        10         | Cardboard     |  Female   |
