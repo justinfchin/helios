@@ -1,7 +1,14 @@
 # For BAE Systems
 - Info provided per request
 
-## Experiment Details
+## Source Details:
+- From TIMIT 
+    - [Female](https://github.com/justinfchin/helios/tree/master/3.BAE/Data/Source/Female)
+        - D1/FCJF0/SA2 
+    - [Male](https://github.com/justinfchin/helios/tree/master/3.BAE/Data/Source/Male)
+        - D1/MCPM0/SA2
+
+## Experiment Details:
 
 | Sample #  | Filename  | Distance (feet)   |  Material     | Speaker   |
 |:--------: |:--------: |:---------------:  |:---------:    |:-------:  |
