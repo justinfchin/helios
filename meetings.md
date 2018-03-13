@@ -90,49 +90,48 @@
 - work on design updates 
 
 ## WK of Feb. 11
-- Lorem 
+- Second design presentation. 
 
 ## WK of Feb. 18
-- Lorem 
+- Finding out how to calculate SNR
 
 ## WK of Feb. 25
-- Lorem 
+- Figuring out the latest designs for system
 
 <a name="mar"></a>
 ## WK of Mar. 4
-- Lorem 
+- Worked on getting data for the BAE Systems and figured out how to use the Scanning LDV 
 
 ## WK of Mar. 11
-- Lorem 
+- Meetings with Polytec to better understand the Scanning LDV
 
 ## WK of Mar. 18
-- Lorem 
+- Working on SNR, Front-End, load, and analysis
 
 ## WK of Mar. 25
-- Lorem 
+- Preparing final design presentation 
 
 <a name="apr"></a>
 ## WK of Apr. 1
 - Lorem 
 
 ## WK of Apr. 8
-- Lorem 
+- Individual Coding Test
 
 ## WK of Apr. 15
-- Lorem 
+- Lorem
 
 
 ## WK of Apr. 22
-- Lorem 
+- Extract longest reached data
 
 ## WK of Apr. 29
-- Lorem 
+- Fixing Bugs
 
 <a name="may"></a>
 ## WK of May. 6
-- Lorem 
+- Finishing the final system presentations 
 
 ## WK of May. 13
-- Lorem 
+- Final System Presentation & Team Evaluation Meeting
 
-## WK of May. 20
