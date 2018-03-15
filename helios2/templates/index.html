@@ -9,8 +9,12 @@
         </title>
     </head>
     <body>
+        <form action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
         <!--
-        <form action="{{ url_for('index') }}" method="post"> 
+        <form action="{{ url_for('index') }}" method="post">
             <label> Upload File </label>
             <input type="text" name="inputText" placeholder="Please Input Name">
             <input type="submit">
@@ -23,7 +27,7 @@
         -->
         <h1> Helios </h1>
         <img class = "resize" src="{{ url_for('static', filename='pics/laser.png')}}">
-        
+
         <div class="comparison">
             <audio controls id="player" src="{{ url_for('static', filename='wav/m5.wav')}}">
                 Browser does not support this. 
