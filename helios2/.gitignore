@@ -1,0 +1,9 @@
+# ignore the .idea folder
+/.idea
+
+# ignore the virtual environment
+/env/
+
+# ignore *ALL* files with the following extensions
+.DS_Store
+
