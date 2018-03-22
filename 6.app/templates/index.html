@@ -1,0 +1,63 @@
+<!DOCTYPE html> <!-- tells browser to read as this kind of html file  -->
+
+<html>
+    <head>
+        <!-- LINKING -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" type="text/css">
+        <title> 
+            ML Algorithm
+        </title>
+    </head>
+    <body>
+        <form action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
+        <!--
+        <form action="{{ url_for('index') }}" method="post">
+            <label> Upload File </label>
+            <input type="text" name="inputText" placeholder="Please Input Name">
+            <input type="submit">
+            {% if result == None %}
+                <h3> NADA </h3>
+            {% else %}
+                <h3> {{ result }}</h3>
+            {% endif %}
+        </form>
+        -->
+        <h1> Helios </h1>
+        <img class = "resize" src="{{ url_for('static', filename='pics/laser.png')}}">
+
+        <div class="comparison">
+            <audio controls id="player" src="{{ url_for('static', filename='wav/m5.wav')}}">
+                Browser does not support this. 
+            </audio>
+            <div> <!-- Filtering Algorithm Portion -->
+                <p class="compare_label" style="display: inline-block"> Filtering Algorithm </p>
+                <ul class="algorithm">
+                    <li onclick="dothis;" id="default_processing" class> None </li>
+                    <li onclick="dothis2;" class="selected"> Butter </li>
+                    <li onclick="dothis3;" class> RNN </li>
+                </ul>
+            </div>
+            <div> <!-- SNR(dB) Portion -->
+                <p class="compare_label" style="display: inline-block"> SNR (dB) </p>
+                <ul class="codec">
+                    <li onclick="setlvl;" class> 0 dB </li>
+                    <li onclick="setlvl1;"> 5 dB </li>
+                    <li onclick="setlvl;" id="default_level" class> 15 dB </li>
+                    <li onclick="setlvl3;" class="selected"> 20 dB </li>
+                    <li onclick="setlvl4;" class> Clean </li>
+                </ul>
+            </div>
+            <div> <!-- Speaker Recognition -->
+                <p class="compare_label" style="display: inline-block"> Speaker Recognition </p>
+                <ul class="None">
+                    <li> <input type="text" name="speakers here">  </li>
+                </ul>
+
+        </div>
+
+
+    </body>
+</html>
