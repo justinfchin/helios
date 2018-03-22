@@ -30,7 +30,7 @@
 		- https://blog.mide.com/vibration-analysis-fft-psd-and-spectrogram
 - Decided to start with detecting letters of the alphabet, then numbers, then words.
 	- Image of the Waveform Alphabet
-		- ![Waveform Alphabet](wfAlpha.jpg)
+		- ![Waveform Alphabet](/5.MISC/wfAlpha.jpg)
 			- Source: https://www.bespokenart.com/products/waveform-alphabet?variant=27061748353
 
 ## WK of Oct. 8
@@ -110,6 +110,7 @@
 
 ## WK of Mar. 25
 - Preparing final design presentation 
+- found nice [website](https://people.xiph.org/~jm/demo/rnnoise/)
 
 <a name="apr"></a>
 ## WK of Apr. 1
