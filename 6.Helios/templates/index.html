@@ -55,12 +55,13 @@
 
             <div> <!-- Filtering Algorithm Portion -->
                 <p class="compare_label" style="display: inline-block"> Filtering Algorithm </p>
-                <ul class="algorithm">
-                    <li onclick="setFilter(0,this);" id="default_processing" class="selected"> None </li>
-                    <li onclick="setFilter(1,this);" class> Wiener </li>
-                    <li onclick="setFilter(2,this);" class> Butter </li>
-                    <li onclick="setFilter(3,this);" class> RNN </li>
-                </ul>
+
+                <form class="algorithm" action="{{ url_for('filtering') }}" method="POST">
+                    <input type="submit" name="filter" value="None">
+                    <input type="submit" name="filter" value="Wiener">
+                    <input type="submit" name="filter" value="Butter">
+                    <input type="submit" name="filter" value="RNN">
+                </form>
             </div>
             <div> <!-- SNR(dB) Portion -->
                 <p class="compare_label" style="display: inline-block"> SNR (dB) </p>

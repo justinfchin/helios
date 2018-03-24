@@ -8,25 +8,18 @@ import scipy.signal as s # for filters
 import scipy.io.wavfile as wav # for reading wav files
 import numpy as np
 
-def wiener(filename,newFilename):
-    """
-    Args:
-        filename : string
-            filename of the wav file without the .wav
-        newFilename : string
-            newFilename without the .wav
-    Returns:
-        saves a .wav file post filtering in same folder
-        prints message
-    """
-    
+
+def wiener(dir, filename):
     # pull data from original
-    fs,data = wav.read(filename+'.wav')
+    fs, data = wav.read(dir + filename)
     # perform the filter
     data = s.wiener(data)
     # convert the datatype back to np.in16
     data = data.astype(np.int16)
     # saves the new wavfile
-    wav.write(newFilename+'.wav',fs,data)
+    # wav.write(newFilename+'.wav',fs,data)
+    file_loc = './static/results/' + filename.rsplit('.', 1)[0].lower() + '_wiener.wav'
+    wav.write(file_loc, fs, data)
     # print message
-    print(newFilename+'.wav saved')
+    # print(newFilename+'.wav saved')
+    return file_loc
