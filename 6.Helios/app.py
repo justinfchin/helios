@@ -1,30 +1,50 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 import filters as fi # for the filters PhotonRave wrote
 
+UPLOAD_FOLDER = os.path.abspath(os.curdir) + '/static/uploads'
+ALLOWED_EXTENSIONS =['wav', 'mp3']
+
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = os.path.abspath(os.curdir) + '/upload'
+app.secret_key = "YouWillNeverGuessTheSecretKey"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-# Renders the Homepage 
-@app.route('/', methods=['GET', 'POST'])
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/', methods=['GET'])
 def index():
-    if request.method == "POST":
-        result = request.form["inputText"]
-        return render_template("index.html", result=result)  # pass param
-    return render_template("index.html", result=None)
+    return render_template("index.html", audio_link=session.get('uploaded_file'))
 
 
-# Saves the File in the same directory as app.py & Uploads to Audio
 @app.route('/uploader', methods=['POST'])
 def uploader():
-    f = request.files['file']
-    f.save(secure_filename(f.filename))#os.path.join(app.config['UPLOAD_FOLDER'],
-                       # secure_filename(f.filename)))
-    return render_template("index.html", result="File uploaded successfully")
+    if 'file' not in request.files:
+        flash("There is no file part in the request")
+        return redirect(url_for('index'))
 
-# Runs the Wiener Filter on the Audio File
+    file = request.files['file']
+
+    if file.filename == '':
+        flash("No file has been selected")
+        return redirect(url_for('index'))
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'],
+                               filename))
+
+        session['uploaded_file'] = "/static/uploads/" + filename
+
+        flash('File uploaded successfully')
+        return redirect(url_for('index'))
+
+    flash('You tried to upload unsupported file')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
