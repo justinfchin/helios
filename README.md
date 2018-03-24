@@ -3,6 +3,8 @@
 - For:
     - CCNY Capstone I & II 
         - Fall 2017 - Wei
+### TEMPORARY BUGS LIST
+1. Selecting 'submit' causes it to crash
 
 ### Senior Design Project Idea
 
