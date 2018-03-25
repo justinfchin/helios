@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, session, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
-import filters as fi # for the filters PhotonRave wrote
+import filters as fi    # for the filters PhotonRave wrote
 
-UPLOAD_FOLDER = os.path.abspath(os.curdir) + '/static/uploads'
+UPLOAD_FOLDER = os.path.abspath(os.curdir) + '/static/uploads/'
+OUTPUT_FOLDER = os.path.abspath(os.curdir) + '/static/results/'
 ALLOWED_EXTENSIONS = ['wav']
 
 app = Flask(__name__)
@@ -75,16 +76,20 @@ def filtering():
         if request.form['filter'] == 'None':
             flash("You have selected No Filter")
         elif request.form['filter'] == 'Wiener':
-            link = fi.wiener('./static/uploads/', session.get('uploaded_filename'))
+            link = fi.filter_and_save(fi.wiener, UPLOAD_FOLDER, session.get('uploaded_filename'))
             flash("You have selected the Wiener Filter")
             return render_template('index.html', audio_link=link)
         elif request.form['filter'] == 'Butter':
+            link = fi.filter_and_save(fi.butter, UPLOAD_FOLDER, session.get('uploaded_filename'))
             flash("You have selected the Butter Filter")
+            return render_template('index.html', audio_link=link)
         else:
-            flash("You have selected the RNN Filter")
+            link = fi.filter_and_save(fi.cheby1, UPLOAD_FOLDER, session.get('uploaded_filename'))
+            flash("You have selected the Chebyshev Type I Filter")
+            return render_template('index.html', audio_link=link)
 
         return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
