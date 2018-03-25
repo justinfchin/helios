@@ -15,6 +15,17 @@
         <div>&nbsp;</div>
         <h2>HELIOS</h2>
 
+        <!-- The following portion allows for showing flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
         <!-- FILE UPLOAD -->
         
         <div class="caption"></div>
@@ -36,17 +47,21 @@
         <p> The audio you uploaded will be played below here. You can select different filters to apply to it. 
         </p>
         <div class="comparison">
-            <audio controls id="player" src="{{ url_for('static', filename='wav/m5.wav')}}">
-                Browser does not support this. 
+            <audio controls>
+                <source src="{{ audio_link }}" type="audio/wav">
+                <source src="{{ audio_link }}" type="audio/mpeg">
+                Browser does not support this.
             </audio>
+
             <div> <!-- Filtering Algorithm Portion -->
                 <p class="compare_label" style="display: inline-block"> Filtering Algorithm </p>
-                <ul class="algorithm">
-                    <li onclick="setFilter(0,this);" id="default_processing" class="selected"> None </li>
-                    <li onclick="setFilter(1,this);" class> Wiener </li>
-                    <li onclick="setFilter(2,this);" class> Butter </li>
-                    <li onclick="setFilter(3,this);" class> RNN </li>
-                </ul>
+
+                <form class="algorithm" action="{{ url_for('filtering') }}" method="POST">
+                    <input type="submit" name="filter" value="None">
+                    <input type="submit" name="filter" value="Butter">
+                    <input type="submit" name="filter" value="Chebyshev I">
+                    <input type="submit" name="filter" value="Wiener">
+                </form>
             </div>
             <div> <!-- SNR(dB) Portion -->
                 <p class="compare_label" style="display: inline-block"> SNR (dB) </p>

@@ -4,6 +4,9 @@
 # ignore the virtual environment
 /env/
 
+# ignore the __pycache__ directory
+/__pycache__/
+
 # ignore *ALL* files with the following extensions
 .DS_Store
 .un~
