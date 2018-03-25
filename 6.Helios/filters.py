@@ -28,9 +28,16 @@ def butter(nd_array):
     :param nd_array: Array of data to be filtered
     :return: Filtered output with the same shape as nd_array
     """
+    N = "<class 'numpy.int16'>"
     b, a = s.butter(20, .3, 'low', analog=False)
-    fil = s.filtfilt(b, a, nd_array, method='gust')
-    return fil
+    # Apply the filter for a single channel
+    if str(type(nd_array[0])) == N:
+        fil = s.filtfilt(b, a, nd_array, method='gust')
+        return fil
+    # Apply the filter for 2 Channels
+    else:
+        fil = s.filtfilt(b, a, nd_array.T[0], method='gust')
+        return fil
 
 
 def cheby1(nd_array):
@@ -41,9 +48,16 @@ def cheby1(nd_array):
     :param nd_array: Array of data to be filtered
     :return: Filtered output with the same shape as nd_array
     """
+    N = "<class 'numpy.int16'>"
     b, a = s.cheby1(20, 2, .3, 'lowpass', analog=False, output='ba')
-    fil = s.filtfilt(b, a, nd_array, method='gust')
-    return fil
+    # Apply the filter for a single channel
+    if str(type(nd_array[0])) == N:
+        fil = s.filtfilt(b, a, nd_array, method='gust')
+        return fil
+    # Apply the filter for 2 Channels
+    else:
+        fil = s.filtfilt(b, a, nd_array.T[0], method='gust')
+        return fil
 
 
 def filter_and_save(filter_func, directory, filename):
