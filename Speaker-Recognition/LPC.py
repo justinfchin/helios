@@ -1,4 +1,3 @@
-#calculate LPC coefficients from sound file
 from __future__ import division
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,7 +43,13 @@ def lpc(s,fs,p):
     lpc_coeffs = np.empty((p, nFrames))
     for i in range(nFrames):
         acf = autocorr(segment[:,i])
-
+#        plt.figure(1)
+#        plt.plot(acf)
+#        plt.xlabel('lags')
+#        plt.ylabel('Autocorrelation coefficients')
+#        plt.axis([0, np.size(acf), -1, 1])
+#        plt.title('Autocorrelation function')
+#        break
         r = -acf[1:p+1].T
         R = createSymmetricMatrix(acf,p)
         lpc_coeffs[:,i] = np.dot(np.linalg.inv(R),r)

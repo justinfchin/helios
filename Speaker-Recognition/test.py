@@ -7,19 +7,17 @@ from LPC import lpc
 from train import training
 import os
 
+from python_speech_features import mfcc as mfcc_p
+
 nSpeaker = 8
-#nSpeaker = 16
-#nfiltbank = 12
-nfiltbank = 14
+nfiltbank = 13 #was 12
 orderLPC = 15
 (codebooks_mfcc, codebooks_lpc) = training(nfiltbank, orderLPC)
-#directory = os.getcwd() + '/traint';
-directory = os.getcwd() + '/testt';
-directory2 = os.getcwd() + '/testt2';
-directory3 = os.getcwd() + '/testt3';
+directory = os.getcwd() + '/test';
 fname = str()
 nCorrect_MFCC = 0
 nCorrect_LPC = 0
+
 
 def minDistance(features, codebooks):
     speaker = 0
@@ -32,71 +30,34 @@ def minDistance(features, codebooks):
             speaker = k
             
     return speaker
+    
 
-for i in range(0, nSpeaker):
-    #fname = '/speaker' + str(i + 1) + '.wav'
-    fname = '/s' + 'a' + str(i+1) + '.wav'
-    print 'Now speaker ', str(i+1), 'features are being tested'
+for i in range(nSpeaker):
+    fname = '/s' + str(i+1) + '.wav'
+    print('Now speaker ', str(i+1), 'features are being tested')
     (fs,s) = read(directory + fname)
-    mel_coefs = mfcc(s,fs,nfiltbank)
+    #mel_coefs = mfcc(s,fs,nfiltbank)
+    mel_coefs = mfcc_p(s, fs)
+    mel_coefs = mel_coefs.transpose()
+    mel_coefs[0, :] = np.zeros(mel_coefs.shape[1]) #0th coefficient does not carry significant information
+
     lpc_coefs = lpc(s, fs, orderLPC)
     sp_mfcc = minDistance(mel_coefs, codebooks_mfcc)
     sp_lpc = minDistance(lpc_coefs, codebooks_lpc)
     
-    print 'Speaker ', (i+1), ' in test matches with speaker ', (sp_mfcc+1), ' in train for training with MFCC'
-    print 'Speaker ', (i+1), ' in test matches with speaker ', (sp_lpc+1), ' in train for training with LPC'
+    print('Speaker ', (i+1), ' in test matches with speaker ', (sp_mfcc+1), ' in train for training with MFCC')
+    print('Speaker ', (i+1), ' in test matches with speaker ', (sp_lpc+1), ' in train for training with LPC')
    
     if i == sp_mfcc:
         nCorrect_MFCC += 1
     if i == sp_lpc:
         nCorrect_LPC += 1
+    
 
-###################### PART 2 TESTING
-
-for i in range(0, nSpeaker):
-    #fname = '/speaker' + str(i + 1) + '.wav'
-    fname = '/s' + 'a' + str(i+1) + '.wav'
-    print 'Now speaker ', str(i + 1), 'features are being tested'
-    (fs, s) = read(directory2 + fname)
-    mel_coefs = mfcc(s, fs, nfiltbank)
-    lpc_coefs = lpc(s, fs, orderLPC)
-    sp_mfcc = minDistance(mel_coefs, codebooks_mfcc)
-    sp_lpc = minDistance(lpc_coefs, codebooks_lpc)
-
-    print 'Speaker ', (i + 1), ' in test matches with speaker ', (sp_mfcc + 1), ' in train for training with MFCC'
-    print 'Speaker ', (i + 1), ' in test matches with speaker ', (sp_lpc + 1), ' in train for training with LPC'
-
-    if i == sp_mfcc:
-        nCorrect_MFCC += 1
-    if i == sp_lpc:
-        nCorrect_LPC += 1
-
-###################### PART 3 TESTING
-for i in range(0, nSpeaker):
-    #fname = '/speaker' + str(i + 1) + '.wav'
-    fname = '/s' + 'a' + str(i+1) + '.wav'
-    print 'Now speaker ', str(i + 1), 'features are being tested'
-    (fs, s) = read(directory3 + fname)
-    mel_coefs = mfcc(s, fs, nfiltbank)
-    lpc_coefs = lpc(s, fs, orderLPC)
-    sp_mfcc = minDistance(mel_coefs, codebooks_mfcc)
-    sp_lpc = minDistance(lpc_coefs, codebooks_lpc)
-
-    print 'Speaker ', (i + 1), ' in test matches with speaker ', (sp_mfcc + 1), ' in train for training with MFCC'
-    print 'Speaker ', (i + 1), ' in test matches with speaker ', (sp_lpc + 1), ' in train for training with LPC'
-
-    if i == sp_mfcc:
-        nCorrect_MFCC += 1
-    if i == sp_lpc:
-        nCorrect_LPC += 1
-
-
-totalSpeakers = 16 + 8
-
-percentageCorrect_MFCC = (nCorrect_MFCC/totalSpeakers)*100
-print 'Accuracy of result for training with MFCC is ', percentageCorrect_MFCC, '%'
-percentageCorrect_LPC = (nCorrect_LPC/totalSpeakers)*100
-print 'Accuracy of result for training with LPC is ', percentageCorrect_LPC, '%'
+percentageCorrect_MFCC = (nCorrect_MFCC/nSpeaker)*100
+print('Accuracy of result for training with MFCC is ', percentageCorrect_MFCC, '%')
+percentageCorrect_LPC = (nCorrect_LPC/nSpeaker)*100
+print('Accuracy of result for training with LPC is ', percentageCorrect_LPC, '%')
 
 
     

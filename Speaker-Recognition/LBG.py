@@ -1,4 +1,3 @@
-#speaker specific Vector Quantization codebook using LBG algorithm
 from __future__ import division
 import numpy as np
 

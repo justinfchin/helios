@@ -1,3 +1,5 @@
+#OLD MFCC USED
+#Fails to get as many desired frames
 from __future__ import division
 from scipy.signal import hamming
 from scipy.fftpack import fft, fftshift, dct
@@ -18,10 +20,10 @@ def mel_filterbank(nfft, nfiltbank, fs):
     upper_mel = hertz_to_mel(8000)
     mel = np.linspace(lower_mel, upper_mel, nfiltbank+2)
     hertz = [mel_to_hertz(m) for m in mel]
-    fbins = [int(hz * (nfft/2+1)/fs) for hz in hertz]
-    fbank = np.empty((int(nfft/2)+1,nfiltbank))
+    fbins = [int(hz * int(nfft/2+1)/fs) for hz in hertz]
+    fbank = np.empty((int(nfft/2+1),nfiltbank))
     for i in range(1,nfiltbank+1):
-        for k in range(int(nfft/2) + 1):
+        for k in range(int(nfft/2 + 1)):
             if k < fbins[i-1]:
                 fbank[k, i-1] = 0
             elif k >= fbins[i-1] and k < fbins[i]:
@@ -30,7 +32,17 @@ def mel_filterbank(nfft, nfiltbank, fs):
                 fbank[k,i-1] = (fbins[i+1] - k)/(fbins[i+1] - fbins[i])
             else:
                 fbank[k,i-1] = 0
-
+     
+#    plotting mel frequency filter banks           
+#    plt.figure(1)
+#    xbins = fs*np.arange(0,nfft/2+1)/(nfft/2+1)
+#    for i in range(nfiltbank):
+#        plt.plot(xbins, fbank[:,i])
+#    plt.axis(xmax = 8000)
+#    plt.xlabel('Frequency in Hz')
+#    plt.ylabel('Amplitude')
+#    plt.title('Mel Filterbank')
+#    plt.show()
     return fbank
             
 def mfcc(s,fs, nfiltbank):
@@ -53,14 +65,11 @@ def mfcc(s,fs, nfiltbank):
     
     #compute periodogram
     nfft = 512
-    #periodogram = np.empty((nFrames,nfft/2 + 1))
-    print(nfft / 2 + 1)
-    print(nFrames)
-    periodogram = np.empty((nFrames, int(nfft / 2) + 1))
+    periodogram = np.empty((nFrames, int(nfft/2 + 1)))
     for i in range(nFrames):
         x = segment[:,i] * hamming(nSamples)
         spectrum = fftshift(fft(x,nfft))
-        periodogram[i,:] = abs(spectrum[int(nfft/2)-1:])/nSamples
+        periodogram[i,:] = abs(spectrum[int(nfft/2-1):])/nSamples
         
     #calculating mfccs    
     fbank = mel_filterbank(nfft, nfiltbank, fs)
