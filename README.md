@@ -21,12 +21,16 @@
 
 ## Reports
 - **Specification Report**
-    - [GoogleDocs Link](https://docs.google.com/document/d/1MODgFBAmrPI_2PXS4SshltVS8bHBz-O9JDveyJbtV4E/edit?usp=sharing)
+    - [Document](https://docs.google.com/document/d/1MODgFBAmrPI_2PXS4SshltVS8bHBz-O9JDveyJbtV4E/edit?usp=sharing)
 - **Design Report**
     - [Presentation](https://docs.google.com/presentation/d/1tisFgrkVGKQc0OuIMv-1m_N49rM4-hB4r10_Se2CzB4/edit?usp=sharing)
     - [Document](https://docs.google.com/document/d/1aCLo4EOBs--eeBiwbeih1LgdyiZGMhM40jSkdIjuo-Q/edit?usp=sharing)
-- **Updates on Design**
-    - [Design Updates](https://docs.google.com/presentation/d/1BMWx23MD0vmf4RUvOBaTfwrOpAZb5I4w9msuXU_t_M4/edit?usp=sharing)
+- **Design Updates**
+    - [Presentation](https://docs.google.com/presentation/d/1BMWx23MD0vmf4RUvOBaTfwrOpAZb5I4w9msuXU_t_M4/edit?usp=sharing)
+- **Final Design**
+    - [Presentation](https://docs.google.com/presentation/d/13B_uOI0xmziEm_iQ8VZUOeHzlHnd84z6P8I2fDJchTU/edit?usp=sharing)
+- **Final System**
+    - [Presentation](
 
 ## Notes:
 - how to get matlab working with python
