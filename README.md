@@ -30,7 +30,7 @@
 - **Final Design**
     - [Presentation](https://docs.google.com/presentation/d/13B_uOI0xmziEm_iQ8VZUOeHzlHnd84z6P8I2fDJchTU/edit?usp=sharing)
 - **Final System**
-    - [Presentation](
+    - [Presentation]()
 
 ## Notes:
 - how to get matlab working with python
@@ -38,6 +38,12 @@
     2. `matlabroot`
     3. cd `matlabroot`/extern/engines/python
     4. `python setup.py install`
+- to install keras (for rnn)
+    1. `sudo pip install keras`
+- to install tensorflow (for keras)
+    1. [website](https://www.tensorflow.org/install/)
+- to install h5py (for saving the model) 
+    1. [website](http://docs.h5py.org/en/latest/build.html)
 
 ## Meetings
 - [View: Meetings](meetings.md)
