@@ -34,9 +34,9 @@
 | 6    | p2s     | Scanning LDV |Person2|64|
 | 7    | p3p     | Point LDV |Person3|108|
 | 8    | p3pt     | Point LDV with Tape|Person3|108|
-| 9    | p3ps    | Scanning LDV|Person3|108|
+| 9    | p3s    | Scanning LDV|Person3|108|
 | 7    | p4p     | Point LDV |Person4|97|
 | 8    | p4pt     | Point LDV with Tape|Person4|97|
-| 9    | p4ps    | Scanning LDV |Person4|97|
+| 9    | p4s    | Scanning LDV |Person4|97|
 
 
