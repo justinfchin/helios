@@ -1,22 +1,13 @@
 # DATA INFO
 - contains information on relevant data
 
-## Max
--
-### Experiment Details
-
-| Sample #  | Filename / Distance (feet) |
-|:--------: |:--------: |
-|     1     |    150    |
-|     2     |    200    |
-|     3     |    250# DATA INFO                                                                        
-
-- contains information on relevant data                                            
-
-​                                                                              
-
 ## [Max](https://github.com/justinfchin/helios/tree/master/4.Data/Max)
 - used scanning LDV in order to determine max distance of remote sensing for human speech
+- pictures are in max/pics
+    1. From LDV to Source
+    2. Camera on LDV
+    3. Alignment on LDV
+    4. How laser dot looks 
 
 ### Experiment Details                                                     
 | Sample # | Filename/Distance(feet) |
@@ -28,10 +19,9 @@
 | 5    | 350     |
 | 6 	|	400|
 
-​                                                                 
-
 ## [Pulses](https://github.com/justinfchin/helios/tree/master/4.Data/Pulses)
 - used scanning LDV, point LDV, and point LDV with reflective tape to collect data on the pulses of four separate volunteers​
+- pictures are in Pulses/pics which are four different volunteers
 
 ### Experiment Details    
 | Sample # | Filename | Collection Tool | Volunteers| Heart Rate(BPM)|
@@ -49,12 +39,4 @@
 | 8    | p4pt     | Point LDV with Tape|Person4|97|
 | 9    | p4ps    | Scanning LDV |Person4|97|
 
-### Images
-    |
-|     4     |    300    |
-|     5     |    350    |
-|     6     |    400    |
 
-## Pulses
-
-### Experiment Details
