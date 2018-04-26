@@ -20,11 +20,11 @@
 | 6 	|	400|
 
 ## [Pulses](https://github.com/justinfchin/helios/tree/master/4.Data/Pulses)
-- used scanning LDV, point LDV, and point LDV with reflective tape to collect data on the pulses of four separate volunteers​
+- used scanning LDV, point LDV, and point LDV with reflective tape to collect data on the pulses of four separate volunteers
 - pictures are in Pulses/pics which are four different volunteers
 
 ### Experiment Details    
-| Sample # | Filename | Collection Tool | Volunteers| Heart Rate(BPM)|
+| Sample # | Filename | Collection Tool | Volunteers| Heart Rate|
 | ------- | ---- | --|--|-|
 | 1    | p1p     | Point LDV | Person1|83|
 | 2    | p1pt     | Point LDV with Tape|Person1|83|
