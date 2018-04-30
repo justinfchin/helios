@@ -114,20 +114,20 @@
 
 <a name="apr"></a>
 ## WK of Apr. 1
-- Lorem 
+- Working on Machine Learning Portion 
 
 ## WK of Apr. 8
 - Individual Coding Test
 
 ## WK of Apr. 15
-- Lorem
+- Spent time reading the manual and messing around with the LDV to better understand
 
 
 ## WK of Apr. 22
-- Extract longest reached data
+- Extract longest reached data and single pulse
 
 ## WK of Apr. 29
-- Fixing Bugs
+- Fixing Bugs, Gui, Machine Learning
 
 <a name="may"></a>
 ## WK of May. 6
