@@ -131,7 +131,9 @@
 
 <a name="may"></a>
 ## WK of May. 6
-- Finishing the final system presentations 
+- Finishing the final system presentations
+- Working on SLDV Tutorial 
+- Obtaining Neck Pulse Data 
 
 ## WK of May. 13
 - Final System Presentation & Team Evaluation Meeting
