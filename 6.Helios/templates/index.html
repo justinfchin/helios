@@ -7,7 +7,7 @@
         <script src="{{ url_for('static', filename='js/demo.js') }}" type=text/javascript></script>
 
         <!-- TITLE -->
-        <title> Helios </title>
+
     </head>
     <body>
         <!-- TOP -->
@@ -31,8 +31,8 @@
         <div class="caption"></div>
         <div class="caption">
         <form action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" />
-            <input type="submit" />
+            <input type="file" name="file" /> <br/>
+            <input type="submit" value="Submit" />
         </form>
 
         <!-- FILE MESSAGE -->
@@ -57,21 +57,31 @@
                 <p class="compare_label" style="display: inline-block"> Filtering Algorithm </p>
 
                 <form class="algorithm" action="{{ url_for('filtering') }}" method="POST">
-                    <input type="submit" name="filter" value="None">
-                    <input type="submit" name="filter" value="Butter">
-                    <input type="submit" name="filter" value="Chebyshev I">
-                    <input type="submit" name="filter" value="Wiener">
+                    <p> Please select the filtering algorithm to be applied: </p>
+
+                    <input type="radio" id="noFilter" name="filter" value="None">
+                    <label for="noFilter"> None </label><br/>
+
+                    <input type="radio" id="butterFilter" name="filter" value="Butter">
+                    <label for="butterFilter"> Butterworth </label><br/>
+
+                    <input type="radio" id="chebyshev1Filter" name="filter" value="Chebyshev I">
+                    <label for="chebyshev1Filter"> Chebyshev I </label><br/>
+
+                    <input type="radio" id="butterChebyshevFilter" name="filter" value="Butter-Chebyshev">
+                    <label for="butterChebyshevFilter"> Butterworth - Chebyshev I </label><br/>
+
+                    <input type="radio" id="chebyshevButterFilter" name="filter" value="Chebyshev-Butter">
+                    <label for="chebyshevButterFilter"> Chebyshev I - Butterworth </label><br/>
+
+                    <input type="radio" id="wienerFilter" name="filter" value="Wiener">
+                    <label for="wienerFilter"> Wiener </label><br/>
+
+                    <label for="numIter"> # of Iteration(s) </label></br>
+                    <input type="number" id="numIter" value="1" min="1" max="10" name="numIter">
+
+                    <input type="submit" name="submit" value="Submit"> </form>
                 </form>
-            </div>
-            <div> <!-- SNR(dB) Portion -->
-                <p class="compare_label" style="display: inline-block"> SNR (dB) </p>
-                <ul class="codec">
-                    <li onclick="setlvl;" class> 0 dB </li>
-                    <li onclick="setlvl1;"> 5 dB </li>
-                    <li onclick="setlvl;" id="default_level" class> 15 dB </li>
-                    <li onclick="setlvl3;" class="selected"> 20 dB </li>
-                    <li onclick="setlvl4;" class> Clean </li>
-                </ul>
             </div>
             <div> <!-- Speaker Recognition -->
                 <p class="compare_label" style="display: inline-block"> Speaker Recognition </p>
@@ -79,14 +89,6 @@
                     <li> <input type="text" name="speakers here">  </li>
                 </ul>
             </div>
-            <div> <!-- Speech to Text Portion -->
-                <p class="compare_label" style="display: inline-block"> STT </p>
-                <ul class="None">
-                    <li> <input type="text" name="speaktotext"> </li>
-                </ul>
-            </div>
         </div>
-
-
     </body>
 </html>
