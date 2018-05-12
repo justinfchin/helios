@@ -16,6 +16,7 @@ def wiener(nd_array):
     :param nd_array: Array of data to be filtered
     :return: Filtered output with the same shape as nd_array
     """
+
     fil = s.wiener(nd_array).astype(np.int16)
     return fil
 
@@ -118,7 +119,8 @@ def filter_and_save(filter_func, directory, filename, iteration=1):
 
     storage_dir = './static/results/' \
                   + filename.rsplit('.', 1)[0].lower() \
-                  + '_' + filter_func.__name__ + '.wav'
+                  + '_' + filter_func.__name__ \
+                  + '_' + str(iteration) + 'n.wav'
 
     # Convert the WAV file into numpy array with a specified sample rate
     rate, nd_array = wav.read(directory + filename)
@@ -126,7 +128,8 @@ def filter_and_save(filter_func, directory, filename, iteration=1):
     # Pass the numpy array into a filtering function and store the result
     result = apply_n_times(filter_func, nd_array, iteration)
 
-    # Convert the array into WAV file and write the output into the disk at the specified directory and sample rate
+    # Convert the array into WAV file and write the output 
+    # into the disk at the specified directory and sample rate
     wav.write(storage_dir, rate, result)
 
     return storage_dir

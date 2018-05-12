@@ -3,9 +3,14 @@ from werkzeug.utils import secure_filename
 import os
 import filters as fi    # for the filters PhotonRave wrote
 
+
+FILTER_FUNCTIONS = {'Chebyshev I': fi.cheby1, 'Butter': fi.butter, 'Wiener': fi.wiener, 'Butter-Chebyshev': fi.butter_cheby,'Chebyshev-Butter': fi.cheby_butter} 
 UPLOAD_FOLDER = os.path.abspath(os.curdir) + '/static/uploads/'
 OUTPUT_FOLDER = os.path.abspath(os.curdir) + '/static/results/'
+SPEAKER_FOLDER = os.path.abspath(os.curdir) + '/static/speakers/'
 ALLOWED_EXTENSIONS = ['wav']
+ML_WEIGHTS = []
+NAMES = []
 
 app = Flask(__name__)
 app.secret_key = "YouWillNeverGuessTheSecretKey"
@@ -41,16 +46,15 @@ def uploader():
         flash("There is no file part in the request")
         return redirect(url_for('index'))
 
-    file = request.files['file']
+    file_fn = request.files['file']
 
-    if file.filename == '':
+    if file_fn.filename == '':
         flash("No file has been selected")
         return redirect(url_for('index'))
 
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'],
-                               filename))
+    if file_fn and allowed_file(file_fn.filename):
+        filename = secure_filename(file_fn.filename)
+        file_fn.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         session['uploaded_file'] = "/static/uploads/" + filename
         session['uploaded_filename'] = filename
@@ -74,18 +78,12 @@ def filtering():
         return redirect(url_for('index'))
     else:
         if request.form['filter'] == 'None':
-            flash("You have selected No Filter")
-        elif request.form['filter'] == 'Wiener':
-            link = fi.filter_and_save(fi.wiener, UPLOAD_FOLDER, session.get('uploaded_filename'))
-            flash("You have selected the Wiener Filter")
-            return render_template('index.html', audio_link=link)
-        elif request.form['filter'] == 'Butter':
-            link = fi.filter_and_save(fi.butter, UPLOAD_FOLDER, session.get('uploaded_filename'))
-            flash("You have selected the Butter Filter")
-            return render_template('index.html', audio_link=link)
+            flash("You have selected no filter")
         else:
-            link = fi.filter_and_save(fi.cheby1, UPLOAD_FOLDER, session.get('uploaded_filename'))
-            flash("You have selected the Chebyshev Type I Filter")
+            selected_filter = request.form['filter']
+            num_iter = int(request.form['numIter'])
+            link = fi.filter_and_save(FILTER_FUNCTIONS.get(selected_filter), UPLOAD_FOLDER, session.get('uploaded_filename'), num_iter)
+            flash("You have applied the %s Filter %d times" % (selected_filter, num_iter))
             return render_template('index.html', audio_link=link)
 
         return redirect(url_for('index'))
