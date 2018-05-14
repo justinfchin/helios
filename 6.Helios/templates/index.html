@@ -32,6 +32,14 @@
         <div class="caption">
         <form action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
             <input type="file" name="file" /> <br/>
+            <input type="radio" onclick="showTextArea()" id="train" name="uploadOpt" value="train">
+            <label for="train"> Train </label><br/>
+            <input type="radio" onclick="hideTextArea()" id="recognize" name="uploadOpt" value="recognize">
+            <label for="recognize"> Recognize </label></br>
+            <div id="personNameDiv" hidden>
+                <label for="personName"> Speaker Name: </label>
+                <input type="text" id="personName" name="personName">
+            </div>
             <input type="submit" value="Submit" />
         </form>
 
@@ -90,5 +98,15 @@
                 </ul>
             </div>
         </div>
+        <script>
+            function hideTextArea(){
+                var x = document.getElementById('personNameDiv')
+                x.style.display = 'none'
+            }
+            
+            function showTextArea(){
+                document.getElementById('personNameDiv').style.display = 'block'
+            }
+        </script>
     </body>
 </html>
