@@ -31,16 +31,21 @@
         <div class="caption"></div>
         <div class="caption">
         <form action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" /> <br/>
-            <input type="radio" onclick="showTextArea()" id="train" name="uploadOpt" value="train">
-            <label for="train"> Train </label><br/>
-            <input type="radio" onclick="hideTextArea()" id="recognize" name="uploadOpt" value="recognize">
-            <label for="recognize"> Recognize </label></br>
-            <div id="personNameDiv" hidden>
-                <label for="personName"> Speaker Name: </label>
-                <input type="text" id="personName" name="personName">
-            </div>
+            <p> Select what action to be executed </p>
+            <input type="file" name="file" /> 
             <input type="submit" value="Submit" />
+            <div>
+                <input type="radio" onclick="showTextArea()" id="train" name="uploadOpt" value="train">
+                <label for="train"> Train </label>
+                <input type="radio" onclick="hideTextArea()" id="recognize" name="uploadOpt" value="recognize">
+                <label for="recognize"> Recognize </label>
+                <input type="radio" onclick="hideTextArea()" id="recognize" name="uploadOpt" value="filter" checked>
+                <label for="recognize"> Filtering </label>
+                <div id="personNameDiv" hidden>
+                    <label for="personName"> Speaker Name: </label>
+                    <input type="text" id="personName" name="personName">
+                </div>
+            </div>
         </form>
 
         <!-- FILE MESSAGE -->

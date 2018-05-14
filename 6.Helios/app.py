@@ -66,7 +66,7 @@ def uploader():
         session['uploaded_filename'] = file_fn.filename
         flash('File uploaded successfully')
 
-        # Check if the 
+        # Check which radio button has been pressed by the user 
         if request.form['uploadOpt'] == 'train':
             # TRAINING THE MODEL 
             if request.form['personName'] != '': 
@@ -77,12 +77,14 @@ def uploader():
                 flash('Model successfully trained with new data')
             else:
                 print("Nothing is to be done over here")
-        else:
+        elif request.form['uploadOpt'] == 'recognize':
             # RECOGNIZING SPEAKER
             output1, output2 = sr.recognize_speaker(MFCC, LPC, '.' + session['uploaded_file'])
 
             flash('MFCC output: %s' % output1)
             flash('LPC output: %s' % output2)
+        else:
+            flash("File is ready for filtering")
             
         return redirect(url_for('index'))
 
