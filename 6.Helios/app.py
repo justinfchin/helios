@@ -1,22 +1,25 @@
 from flask import Flask, render_template, request, session, flash, redirect, url_for
 from werkzeug.utils import secure_filename
+from shutil import copyfile
 import os
 import filters as fi    # for the filters PhotonRave wrote
-
+import SpeakerRecognition as sr
 
 FILTER_FUNCTIONS = {'Chebyshev I': fi.cheby1, 'Butter': fi.butter, 'Wiener': fi.wiener, 'Butter-Chebyshev': fi.butter_cheby,'Chebyshev-Butter': fi.cheby_butter} 
 UPLOAD_FOLDER = os.path.abspath(os.curdir) + '/static/uploads/'
 OUTPUT_FOLDER = os.path.abspath(os.curdir) + '/static/results/'
 SPEAKER_FOLDER = os.path.abspath(os.curdir) + '/static/speakers/'
 ALLOWED_EXTENSIONS = ['wav']
-ML_WEIGHTS = []
-NAMES = []
+MFCC = None
+LPC = None
 
 app = Flask(__name__)
 app.secret_key = "YouWillNeverGuessTheSecretKey"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SPEAKER_FOLDER'] = SPEAKER_FOLDER
 
 
+# MFCC, LPC = sr.training(13, 15)
 def allowed_file(filename):
     """
     Checks if the name of the file uploaded has an allowable extension type
@@ -53,13 +56,34 @@ def uploader():
         return redirect(url_for('index'))
 
     if file_fn and allowed_file(file_fn.filename):
-        filename = secure_filename(file_fn.filename)
-        file_fn.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # Store the filepath of the to be saved WAV file
+        FILE_DIR = os.path.join(app.config['UPLOAD_FOLDER'], file_fn.filename)
+        file_fn.save(FILE_DIR)
 
-        session['uploaded_file'] = "/static/uploads/" + filename
-        session['uploaded_filename'] = filename
-
+        # Store the filepath and filename of the uploaded file 
+        # to the flask session
+        session['uploaded_file'] = "/static/uploads/" + file_fn.filename
+        session['uploaded_filename'] = file_fn.filename
         flash('File uploaded successfully')
+
+        # Check if the 
+        if request.form['uploadOpt'] == 'train':
+            # TRAINING THE MODEL 
+            if request.form['personName'] != '': 
+                copyfile(FILE_DIR, os.path.join(app.config['SPEAKER_FOLDER'], file_fn.filename))
+                sr.add_new_speaker(request.form['personName'])
+                global MFCC, LPC
+                MFCC, LPC = sr.training(13, 15)
+                flash('Model successfully trained with new data')
+            else:
+                print("Nothing is to be done over here")
+        else:
+            # RECOGNIZING SPEAKER
+            output1, output2 = sr.recognize_speaker(MFCC, LPC, '.' + session['uploaded_file'])
+
+            flash('MFCC output: %s' % output1)
+            flash('LPC output: %s' % output2)
+            
         return redirect(url_for('index'))
 
     flash('You tried to upload unsupported file')
@@ -90,4 +114,5 @@ def filtering():
 
 
 if __name__ == '__main__':
+    MFCC, LPC = sr.training(13, 15)
     app.run(debug=True)

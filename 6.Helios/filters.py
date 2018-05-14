@@ -7,6 +7,7 @@ Purpose:
 import scipy.signal as s            # for filters
 import scipy.io.wavfile as wav      # for reading wav files
 import numpy as np
+import os
 
 
 def wiener(nd_array):
@@ -121,7 +122,7 @@ def filter_and_save(filter_func, directory, filename, iteration=1):
                   + filename.rsplit('.', 1)[0].lower() \
                   + '_' + filter_func.__name__ \
                   + '_' + str(iteration) + 'n.wav'
-
+    
     # Convert the WAV file into numpy array with a specified sample rate
     rate, nd_array = wav.read(directory + filename)
 

@@ -9,5 +9,5 @@
 
 # ignore *ALL* files with the following extensions
 .DS_Store
-.un~
-
+*.un~
+*.pyc
