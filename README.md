@@ -30,7 +30,7 @@
 - **Final Design**
     - [Presentation](https://docs.google.com/presentation/d/13B_uOI0xmziEm_iQ8VZUOeHzlHnd84z6P8I2fDJchTU/edit?usp=sharing)
 - **Final System**
-    - [Presentation]()
+    - No Presentation. Just Demoed System.
 
 ## Notes:
 - how to get matlab working with python
